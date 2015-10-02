@@ -12,6 +12,6 @@ namespace ComBi
       get;
     }
 
-    IEnumerable<byte> GetBytes(object value);
+    IEnumerable<byte> ConvertToBytes(object value);
   }
 }

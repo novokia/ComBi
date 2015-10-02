@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB1D0EB7-D1C1-4F14-9B9A-39F814B743DF}</ProjectGuid>
+    <ProjectGuid>{51AE82BC-DA26-4107-B40F-ED9326F5BEF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ComBi</RootNamespace>
-    <AssemblyName>ComBi</AssemblyName>
+    <RootNamespace>ComBi.Converters</RootNamespace>
+    <AssemblyName>ComBi.Converters</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,8 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,19 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComBiSerializer.cs" />
-    <Compile Include="ConverstionItem.cs" />
-    <Compile Include="DataConverter.cs" />
-    <Compile Include="DataValueAttribute.cs" />
-    <Compile Include="EnumerableConverter.cs" />
-    <Compile Include="IConverterAttribute.cs" />
-    <Compile Include="IDataConverter.cs" />
-    <Compile Include="IDataValue.cs" />
+    <Compile Include="ASCIIStringDataConverter.cs" />
+    <Compile Include="BigEndianIntDataConverter.cs" />
+    <Compile Include="IntDataConverter.cs" />
+    <Compile Include="OptionalAsciiStringConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecordConverter.cs" />
-    <Compile Include="RecordValueAttribute.cs" />
-    <Compile Include="TypeNotSupportedException.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="UIntDataConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComBi\ComBi.csproj">
+      <Project>{eb1d0eb7-d1c1-4f14-9b9a-39f814b743df}</Project>
+      <Name>ComBi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

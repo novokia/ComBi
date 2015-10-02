@@ -1,4 +1,5 @@
 ﻿using Fixie;
+using FluentAssertions.Execution;
 
 namespace ComBi.UnitTests.Config
 {
@@ -11,6 +12,8 @@ namespace ComBi.UnitTests.Config
       Methods.Where(method => method.IsVoid());
 
       Parameters.Add<FromInputAttributes>();
+
+      HideExceptionDetails.For<AssertionFailedException>();
     }
   }
 }

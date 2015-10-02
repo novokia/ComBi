@@ -1,29 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ComBi.UnitTests.Config;
 using FluentAssertions;
 
 namespace ComBi.UnitTests
 {
-  public class UtilsTests
+ public class UtilsTests
   {
     [Input("TestValue")]
     [Input(1234)]
-    public void ShouldGetTypeAsCorrectly<T>(T value)
+    public void ShouldCastCorrectly<T>(T value)
     {
-      Utils.GetTypeAs<T>(value).Should().Be(value);
+      Utils.Cast<T>(value).Should().Be(value);
     }
 
     [Input("TestValue", 1234)]
     [Input(1234, "TestValue")]
+    [Input(1234.23, 1234)]
     public void ShouldThrowExceptionOnTypeMismatchForGetTypeAs<T, U>(T value, U expectedType)
     {
       var expectedMessage = string.Format("Expected Type of {0}, Actual Type is {1}", typeof(U).Name, typeof(T).Name);
       
-      Action action = () => Utils.GetTypeAs<U>(value);
+      Action action = () => Utils.Cast<U>(value);
       
       action.ShouldThrow<TypeNotSupportedException>().WithMessage(expectedMessage);
     }
@@ -34,8 +31,7 @@ namespace ComBi.UnitTests
     {
       T outValue;
       
-      Utils.TryGetTypeAs<T>(value, out outValue).Should().BeTrue();
-
+      Utils.TryCast(value, out outValue).Should().BeTrue();
       outValue.ShouldBeEquivalentTo(value);
     }
 
@@ -45,7 +41,8 @@ namespace ComBi.UnitTests
     public void ShouldReturnFalseOnTypeMismatchForTryGetTypeAs<T, U>(T value, U expectedType)
     {
       U outValue;
-      Utils.TryGetTypeAs(value, out outValue).Should().BeFalse();
+
+      Utils.TryCast(value, out outValue).Should().BeFalse();
 
       outValue.ShouldBeEquivalentTo(default(U));
     }

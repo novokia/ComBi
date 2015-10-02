@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ComBi
+﻿namespace ComBi
 {
   public static class Utils
   {
-    public static T GetTypeAs<T>(object value)
+    public static T Cast<T>(object value)
     {
       if(value is T)
       {
@@ -17,8 +11,8 @@ namespace ComBi
 
       throw new TypeNotSupportedException(typeof(T), value.GetType());
     }
-
-    public static bool TryGetTypeAs<T>(object value, out T valueAs)
+    
+    public static bool TryCast<T>(object value, out T valueAs)
     {
       if(value is T)
       {

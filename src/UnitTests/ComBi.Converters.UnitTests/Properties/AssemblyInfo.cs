@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ComBi")]
+[assembly: AssemblyTitle("ComBi.Converters.UnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ComBi")]
-[assembly: AssemblyProduct("ComBi")]
-[assembly: AssemblyCopyright("Copyright © ComBi 2015")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ComBi.Converters.UnitTests")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0f8690d4-3559-4ccb-a681-3d2886668f46")]
+[assembly: Guid("7842bc63-e508-4ead-9a24-673b3eedd35e")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,5 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: InternalsVisibleTo("ComBi.UnitTests")]

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComBi", "ComBi\ComBi.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComBi.UnitTests", "UnitTests\ComBi.UnitTests\ComBi.UnitTests.csproj", "{0F8C3883-3E5E-45DA-B0B8-01845F1A5510}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComBi.Converters", "ComBi.Converters\ComBi.Converters.csproj", "{51AE82BC-DA26-4107-B40F-ED9326F5BEF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComBi.Converters.UnitTests", "UnitTests\ComBi.Converters.UnitTests\ComBi.Converters.UnitTests.csproj", "{45BD0201-4EE9-4C32-A09E-8E569366755F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0F8C3883-3E5E-45DA-B0B8-01845F1A5510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8C3883-3E5E-45DA-B0B8-01845F1A5510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F8C3883-3E5E-45DA-B0B8-01845F1A5510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AE82BC-DA26-4107-B40F-ED9326F5BEF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AE82BC-DA26-4107-B40F-ED9326F5BEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AE82BC-DA26-4107-B40F-ED9326F5BEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AE82BC-DA26-4107-B40F-ED9326F5BEF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45BD0201-4EE9-4C32-A09E-8E569366755F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BD0201-4EE9-4C32-A09E-8E569366755F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BD0201-4EE9-4C32-A09E-8E569366755F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BD0201-4EE9-4C32-A09E-8E569366755F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
