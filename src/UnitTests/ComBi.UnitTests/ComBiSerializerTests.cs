@@ -18,11 +18,11 @@ namespace ComBi.UnitTests
                                       .Concat(testData.PhoneNumbers.SelectMany(s => Encoding.ASCII.GetBytes(s)))
                                       .Concat(testData.Addresses.SelectMany(GetAddressBytes))
                                       .Concat(testData.CalculatedBytes ?? Enumerable.Empty<byte>())
-                                      .Concat(GetAddressBytes(testData.ShippingAddresses))
-                                      .Concat(Enumerable.Repeat((byte)0, 10));
-      
-      var bytes = ComBiSerializer.Serialize(testData);
+                                      .Concat(Encoding.ASCII.GetBytes(testData.NickName))
+                                      .Concat(GetAddressBytes(testData.ShippingAddresses));
 
+      var bytes = ComBiSerializer.Serialize(testData);
+      
       bytes.Should().Equal(expectedBytes);
     }
 
@@ -33,6 +33,7 @@ namespace ComBi.UnitTests
                Id = 1234,
                FirstName = "First",
                LastName = "Last",
+               NickName = "NickName",
                PhoneNumbers = new[]
                               {
                                 "555-555-5555",
@@ -54,8 +55,15 @@ namespace ComBi.UnitTests
                                State = "Same State",
                                ZipCode = 52653
                              }
-                           }
-             };
+                           },
+               ShippingAddresses = new Address
+               {
+                 Street = "9876 Different Street",
+                 City = "Different City",
+                 State = "Same State",
+                 ZipCode = 52653
+               }
+      };
     }
 
     private static IEnumerable<byte> GetAddressBytes(Address address)
